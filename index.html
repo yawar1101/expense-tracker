@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expense Tracker</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <form id="editExpenseForm" style="display: none;">
+                <input type="hidden" id="editedExpenseIndex">
+                <button type="button" onclick="saveChanges()">Save Changes</button>
+            </form>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Add Expense</h2>
+                    <form id="expenseForm">
+                        <div class="form-group">
+                            <label for="expenseAmount">Expense Amount:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="expenseAmount"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="expenseDescription">Description:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="expenseDescription"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="expenseCategory">Category:</label>
+                            <select
+                                class="form-control"
+                                id="expenseCategory"
+                                required
+                            >
+                                <option value="food">Food</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="transportation">
+                                    Transportation
+                                </option>
+                                <option value="movie">Movie</option>
+                                <!-- Add more categories as needed -->
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">
+                            Add Expense
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h2>Expense List</h2>
+                    <ul id="expenseList" class="list-group">
+                        <!-- Expense items will be displayed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
